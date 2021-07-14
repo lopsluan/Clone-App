@@ -8,7 +8,7 @@ import NavBar from "./NavBar";
 import Form from "./Form";
 import Footer from "./Footer";
 
-function AppClone() {
+function AppClone({ navigation }) {
 	return (
 		<>
 			<View style={styles.container}>
@@ -18,7 +18,7 @@ function AppClone() {
 					style={styles.background}
 				/>
 				<NavBar></NavBar>
-				<Form />
+				<Form navigation={navigation} />
 				<Footer></Footer>
 			</View>
 		</>

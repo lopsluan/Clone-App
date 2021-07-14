@@ -1,16 +1,25 @@
+import "react-native-gesture-handler";
+
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
 import AppClone from "./components/appClone/AppClone";
 
-export default function App() {
-	return <AppClone></AppClone>;
-}
+import Home from "./components/Home/Home";
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-});
+const Stack = createStackNavigator();
+
+export default function App() {
+	return (
+		<NavigationContainer>
+			<StatusBar hidden={true} />
+			<Stack.Navigator>
+				<Stack.Screen name="Login" component={AppClone} />
+				<Stack.Screen name="Home" component={Home} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+}

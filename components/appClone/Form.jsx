@@ -10,7 +10,7 @@ import {
 	Image,
 } from "react-native";
 
-function Form() {
+function Form({ navigation }) {
 	return (
 		<View style={styles.form}>
 			<TouchableHighlight>
@@ -24,7 +24,7 @@ function Form() {
 				placeholder=""
 			></TextInput>
 
-			<TouchableHighlight>
+			<TouchableHighlight onPress={() => navigation.navigate("Home")}>
 				<View style={styles.button}>
 					<Text style={styles.buttonText}>acessar</Text>
 				</View>
